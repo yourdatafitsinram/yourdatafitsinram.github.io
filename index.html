@@ -14,7 +14,7 @@ var Sizes = [
 var DefaultSize = Sizes[3];
 var TB = Sizes[4][1];
 
-var MAX_SENSIBLE = 6 * TB;
+var MAX_SENSIBLE = 5 * TB;
 
 function doesMyDataFitInRam(dataSize) {
      return dataSize <= MAX_SENSIBLE;
@@ -41,7 +41,7 @@ function start() {
      function recalculate() {
      	var dataSize = (+inpNum.value) * (+inpSize.value);
          if (doesMyDataFitInRam(dataSize)) {
-     		answer.innerHTML = "<a href=\"http://www.dell.com/us/business/p/poweredge-r920/pd\">YES</a>, <a href=\"http://www8.hp.com/uk/en/products/proliant-servers/product-detail.html?oid=8090149#!tab=specs\">your</a> data fits in RAM.";
+     		answer.innerHTML = "YES, your data fits in RAM. <br /><br /><small>Skeptical? <br /> Check out <a href=\"http://www.dell.com/us/business/p/poweredge-r920/pd\">this</a> or <a href=\"http://www8.hp.com/uk/en/products/proliant-servers/product-detail.html?oid=8090149#!tab=specs\">this</a>.</small></p>";
      		body.classList.add('answer-yes');
      		body.classList.remove('answer-no');
      	} else {
@@ -67,7 +67,7 @@ body {
      background-color: #eee;
 }
 #answer {
-     font-size: 120px;
+     font-size: 90px;
 }
 #inputs, #inpNum, #inpSize {
      font-size: 40px;
